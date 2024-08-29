@@ -1,13 +1,13 @@
 import "./RandomScroller.css";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Link, useParams } from "react-router-dom";
 import movieData from "../../Data/Data.js";
 
 function RandomScroller() {
   // console.log(movieData)
 
-  const [currentIndex, setCurrentIndex] = useState(0);
-
+  // const [currentIndex, setCurrentIndex] = useState(0);
+  
   const randomList = []
   
   function getRandomIndex(array) {
@@ -18,6 +18,14 @@ function RandomScroller() {
     var index = getRandomIndex(array);
     return array[index];
   }
+
+  // useEffect(() => {
+  //   const intervalId = setInterval(() => {
+  //     setCurrentIndex((prevIndex) => (prevIndex + 1) % randomList.length)
+  //   }, 3000);
+
+  //   return () => clearInterval(intervalId)
+  // }, [currentIndex]);
   
   for(let i = 0; i < 5; i++) {
     // console.log('Yo!')
@@ -39,49 +47,40 @@ function RandomScroller() {
   /*
   function getRandomIndex(array) {
   return Math.floor(Math.random() * array.length);
-}
+  }
 
-function getRandomMember(array2) {
-  var index = getRandomIndex(array2);
-  return array2[index];
-}
+  function getRandomMember(array2) {
+    var index = getRandomIndex(array2);
+    return array2[index];
+  }
   */ 
 
 
   return(
-    // <section className="random-carousel">
-    //   /* some stuff... */
-    // </section>
-
     <div className="outer-container">
       <div className="container">
         {randomList.map((movie, index) => {
-          return (<img src={movie.poster_path} alt={movie.title} key={index} className={currentIndex === index ? "currentIndex" : "currentIndex currentIndex-hidden"} />)
+          return (<img src={movie.poster_path} alt={movie.title} key={index}/>)
         })}
       </div>
       <span className="movie-index-dots">
         {randomList.map((_, index) => {
-          return <button key={index} onClick={() => setCurrentIndex(index)} className={currentIndex === index ? "index-dot" : "index-dot index-dot-inactive"} >*</button>
+          return <button key={index}>*</button>
         })}
       </span>
     </div>
 
-    // <div className='container'>
-    //     <div >
-    //         <img src={randomList[0].poster_path} alt={randomList[0].title} className='random-movie'/>
-    //    </div>
-    //     <div >
-    //         <img src={randomList[1].poster_path} alt={randomList[1].title} className='random-movie'/>    
-    //     </div>
-    //     <div >
-    //         <img src={randomList[2].poster_path} alt={randomList[2].title} className='random-movie'/>
-    //     </div>
-    //     <div >
-    //         <img src={randomList[3].poster_path} alt={randomList[3].title} className='random-movie'/>
-    //     </div>
-    //     <div >
-    //         <img src={randomList[4].poster_path} alt={randomList[4].title} className='random-movie'/>
-    //     </div>
+    // <div className="outer-container">
+    //   <div className="container">
+    //     {randomList.map((movie, index) => {
+    //       return (<img src={movie.poster_path} alt={movie.title} key={index} className={currentIndex === index ? "currentIndex" : "currentIndex currentIndex-hidden"} />)
+    //     })}
+    //   </div>
+    //   <span className="movie-index-dots">
+    //     {randomList.map((_, index) => {
+    //       return <button key={index} onChange={() => setCurrentIndex(index)} className={currentIndex === index ? "index-dot" : "index-dot index-dot-inactive"} >*</button>
+    //     })}
+    //   </span>
     // </div>
   );
 };
