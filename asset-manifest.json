@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/popcorn-score/static/css/main.0093492d.css",
+    "main.js": "/popcorn-score/static/js/main.e2fb57ba.js",
+    "static/js/453.5503453b.chunk.js": "/popcorn-score/static/js/453.5503453b.chunk.js",
+    "static/media/popcornScoreLogo.png": "/popcorn-score/static/media/popcornScoreLogo.0b3d7c849706c45f6f01.png",
+    "index.html": "/popcorn-score/index.html",
+    "main.0093492d.css.map": "/popcorn-score/static/css/main.0093492d.css.map",
+    "main.e2fb57ba.js.map": "/popcorn-score/static/js/main.e2fb57ba.js.map",
+    "453.5503453b.chunk.js.map": "/popcorn-score/static/js/453.5503453b.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.0093492d.css",
+    "static/js/main.e2fb57ba.js"
+  ]
+}
